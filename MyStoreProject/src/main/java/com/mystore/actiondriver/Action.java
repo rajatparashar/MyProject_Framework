@@ -23,7 +23,6 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import com.mystore.base.BaseClass;
-
 public class Action extends BaseClass {
 
 	public static void scrollByVisibilityOfElement(WebDriver driver, WebElement ele) {
