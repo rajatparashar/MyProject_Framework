@@ -708,7 +708,7 @@ public class Action extends BaseClass {
 			e.getMessage();
 		}
 		// This new path for jenkins
-		String newImageString = "http://localhost:8082/job/MyStoreProject/ws/MyStoreProject/ScreenShots/" + filename
+		String newImageString = "http://localhost:8080/job/MyStoreProject/ws/MyStoreProject/Screenshots/" + filename
 				+ "_" + dateName + ".png";
 		return newImageString;
 	}
