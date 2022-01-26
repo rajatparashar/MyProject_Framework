@@ -4,6 +4,9 @@
 	<listeners>
 		<listener class-name="com.mystore.utility.ListenerClass"></listener>
 	</listeners>
+	<listeners>
+		<listener class-name="com.mystore.utility.ListenerClass"></listener>
+	</listeners>
 	<test thread-count="5" name="Test">
 		<parameter name="browser" value="Chrome"></parameter>
 		<classes>

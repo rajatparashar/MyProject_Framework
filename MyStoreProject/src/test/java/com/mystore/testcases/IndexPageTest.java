@@ -12,27 +12,33 @@ public class IndexPageTest extends BaseClass {
 	IndexPage indexPage;
 
 	@Parameters("browser")
-	@BeforeMethod(groups= {"Smoke","Sanity","Regression"})
+	@BeforeMethod(groups = { "Smoke", "Sanity", "Regression" })
 	public void setUp(String browser) {
 		launchApp(browser);
 	}
 
-	@AfterMethod(groups= {"Smoke","Sanity","Regression"})
+	@AfterMethod(groups = { "Smoke", "Sanity", "Regression" })
 	public void tearDown() {
 		driver.quit();
 	}
 
-	@Test(groups="Smoke")
-	public void verifyLogo() {
+	@Test(groups = "Smoke")
+	public void verifyLogoTest() {
 		indexPage = new IndexPage();
 		boolean result = indexPage.validateLogo();
 		Assert.assertTrue(result);
 	}
 
-	@Test(groups="Smoke")
-	public void verifyTitle() {
+	@Test(groups = "Smoke")
+	public void verifyTitleTest() {
 		String actualTitle = indexPage.getMyStoreTitle();
 		Assert.assertEquals(actualTitle, "My Store");
 	}
 
+	// deliberately failing this test case
+	@Test(groups = "Smoke")
+	public void verifyTitleFailedTest() {
+		String actualTitle = indexPage.getMyStoreTitle();
+		Assert.assertEquals(actualTitle, "My Store1");
+	}
 }

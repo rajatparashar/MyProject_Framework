@@ -16,17 +16,17 @@ public class HomePageTest extends BaseClass {
 	HomePage homePage;
 
 	@Parameters("browser")
-	@BeforeMethod(groups= {"Smoke","Sanity","Regression"})
+	@BeforeMethod(groups = { "Smoke", "Sanity", "Regression" })
 	public void setUp(String browser) {
 		launchApp(browser);
 	}
 
-	@AfterMethod(groups= {"Smoke","Sanity","Regression"})
+	@AfterMethod(groups = { "Smoke", "Sanity", "Regression" })
 	public void tearDown() {
 		driver.quit();
 	}
-	
-	@Test(groups="Smoke")
+
+	@Test(groups = "Smoke")
 	public void orderHistoryAndDetailsTest() {
 		indexPage = new IndexPage();
 		loginPage = indexPage.clickOnSignIn();
@@ -35,7 +35,7 @@ public class HomePageTest extends BaseClass {
 		Assert.assertTrue(result);
 	}
 
-	@Test(groups="Smoke")
+	@Test(groups = "Smoke")
 	public void wishListTest() {
 		indexPage = new IndexPage();
 		loginPage = indexPage.clickOnSignIn();
@@ -43,5 +43,14 @@ public class HomePageTest extends BaseClass {
 		boolean result = homePage.validateMyWishList();
 		Assert.assertTrue(result);
 	}
-	
+
+	// deliberately failing this test case
+	@Test(groups = "Smoke")
+	public void wishListFailedTest() {
+		indexPage = new IndexPage();
+		loginPage = indexPage.clickOnSignIn();
+		homePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
+		boolean result = homePage.validateMyWishList();
+		Assert.assertTrue(false);
+	}
 }

@@ -17,19 +17,19 @@ public class AccountCreationPageTest extends BaseClass {
 	LoginPage loginPage;
 	HomePage homePage;
 	AccountCreationPage accountCreationPage;
-	
+
 	@Parameters("browser")
-	@BeforeMethod(groups= {"Smoke","Sanity","Regression"})
+	@BeforeMethod(groups = { "Smoke", "Sanity", "Regression" })
 	public void setUp(String browser) {
 		launchApp(browser);
 	}
 
-	@AfterMethod(groups= {"Smoke","Sanity","Regression"})
+	@AfterMethod(groups = { "Smoke", "Sanity", "Regression" })
 	public void tearDown() {
 		driver.quit();
 	}
-	
-	@Test(groups="Sanity")
+
+	@Test(groups = "Sanity")
 	public void verifyCreateAccountPageTest() {
 		indexPage = new IndexPage();
 		loginPage = indexPage.clickOnSignIn();
@@ -37,5 +37,4 @@ public class AccountCreationPageTest extends BaseClass {
 		boolean result = accountCreationPage.validateAccountCreatePage();
 		Assert.assertTrue(result);
 	}
-	
 }
